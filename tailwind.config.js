@@ -105,13 +105,13 @@ export default {
           subdued: '#C9CCCF', // Warna border lebih terang
         },
         primary: {
-          DEFAULT: '#E2E8F0 ', // Warna utama (terang abu-abu)
+          DEFAULT: '#1E3A8A', // Warna utama (indigo)
         },
         secondary: {
-          DEFAULT: '#1F2937', // Warna sekunder (gelap)
+          DEFAULT: '#22D3EE', // Warna sekunder (sky blue)
         },
         accent: {
-          DEFAULT: '#22D3EE', // Warna aksen biru cerah
+          DEFAULT: '#FBBF24', // Warna amber
         },
         light: {
           DEFAULT: '#F9FAFB', // Warna terang latar belakang
