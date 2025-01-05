@@ -1,0 +1,1 @@
+{"root":["./src/main.tsx","./src/vite-env.d.ts","./src/pages/homepage/index.tsx","./src/pages/layout/index.tsx","./src/pages/notfound/index.tsx","./src/routes/loadables.ts","./src/routes/router.tsx","./src/store/api.ts","./src/store/store.ts","./src/store/reducer/statemode.tsx"],"version":"5.6.3"}

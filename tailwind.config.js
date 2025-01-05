@@ -1,9 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  // Mengaktifkan dark mode berdasarkan kelas yang diterapkan di HTML
   darkMode: ['class'],
+
+  // Mendefinisikan direktori yang berisi file untuk pemindaian class Tailwind
   content: ['./src/**/*.{ts,tsx}'],
+
   theme: {
-    // --- Border Radius ---
+    // --- Sistem Border Radius ---
     borderRadius: {
       none: '0px',
       sm: '0.125rem',
@@ -13,13 +17,13 @@ export default {
       xl: '0.75rem',
       '2xl': '1rem',
       '3xl': '1.5rem',
-      full: '9999px',
+      full: '9999px', // Membuat border radius menjadi bulat sempurna
       '2x': '2rem',
       '3x': '3rem',
       '4x': '4rem',
     },
 
-    //? ----- WHITESPACE SYSTEM -----
+    //? ----- SISTEM SPASI -----
     spacing: {
       0: '0',
       1: '0.1rem',
@@ -37,7 +41,7 @@ export default {
       128: '12.8rem',
     },
 
-    //? ----- TYPOGRAPHY SYSTEM -----
+    //? ----- SISTEM TIPOGRAFI -----
     fontSize: {
       10: '1rem',
       12: '1.2rem',
@@ -56,9 +60,9 @@ export default {
       98: '9.8rem',
     },
     lineHeight: {
-      DEFAULT: '1',
+      DEFAULT: '1', // Line height default
       medium: '1.2',
-      paragraph: '1.5',
+      paragraph: '1.5', // Line height untuk paragraf
     },
     letterSpacing: {
       DEFAULT: '0.1rem',
@@ -71,75 +75,86 @@ export default {
       6: '0.6rem',
     },
 
-    // ! Rem and em do not depend on html font-size in media queries.
-    // ! Instead, 1rem = 1em = 16px
-
-    // ! We use em units for media queries because rem has some bugs in media queries.
-    /* 
-    Example:
-    1680px / 16px = 105em
-    */
+    // ! Menggunakan unit em untuk media queries agar lebih konsisten
+    // ! 1rem = 1em = 16px pada kebanyakan browser
     screens: {
-      'bigger-desktops': { max: '105em' },
-      'smaller-desktops': { max: '85em' },
-      'landscape-tablets': { max: '75em' },
-      tablets: { max: '59em' },
-      'smaller-tablets': { max: '44em' },
-      phones: { max: '34em' },
+      phones: { max: '64em' }, // Mengatur ukuran layar untuk perangkat ponsel, maksimal 64em (1024px)
+      desktop: { min: '64.01em' }, // Ukuran untuk desktop mulai dari 64.01em (1025px ke atas)
     },
+
     extend: {
+      // Menambahkan font keluarga kustom
       fontFamily: {
         nunito: ['Nunito Sans', 'sans-serif'],
         roboto: ['Roboto Slab', 'serif'],
         'sf-pro': ['SF Pro Display', 'sans-serif'],
         helvetica: ['Helvetica', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
       },
 
-      // ? ----- COLOR SYSTEM
+      // ? ----- SISTEM WARNA -----
       colors: {
         background: {
-          DEFAULT: '#ffffff',
-          secondary: '#F5F5DC',
+          DEFAULT: '#ffffff', // Warna latar belakang default putih
+          secondary: '#F5F5DC', // Warna latar belakang sekunder (beige)
         },
-
         border: {
-          DEFAULT: '#8C9196',
-          subdued: '#C9CCCF',
+          DEFAULT: '#8C9196', // Warna border default abu-abu
+          subdued: '#C9CCCF', // Warna border lebih terang
+        },
+        primary: {
+          DEFAULT: '#E2E8F0 ', // Warna utama (terang abu-abu)
+        },
+        secondary: {
+          DEFAULT: '#1F2937', // Warna sekunder (gelap)
+        },
+        accent: {
+          DEFAULT: '#22D3EE', // Warna aksen biru cerah
+        },
+        light: {
+          DEFAULT: '#F9FAFB', // Warna terang latar belakang
+        },
+        dark: {
+          DEFAULT: '#0F172A', // Warna latar belakang gelap
         },
       },
 
-      // ? ----- SHADOW SYSTEM
+      // ? ----- SISTEM SHADOW -----
       boxShadow: {
-        disabled: '0px -0.9471396207809448px 0px 0px rgba(0, 0, 0, 0.08) inset',
-        'active-primary': '0 0 0 3px rgba(64, 0, 83, 0.5)',
+        disabled: '0px -0.9471396207809448px 0px 0px rgba(0, 0, 0, 0.08) inset', // Shadow untuk elemen yang tidak aktif
+        'active-primary': '0 0 0 3px rgba(64, 0, 83, 0.5)', // Shadow untuk elemen aktif dengan warna primer
       },
 
-      // ? ----- ANIMATION
+      // ? ----- ANIMASI -----
       keyframes: {
         'accordion-down': {
-          from: { height: 0 },
-          to: { height: 'var(--radix-accordion-content-height)' },
+          from: { height: 0 }, // Animasi untuk membuka accordion (dari tinggi 0)
+          to: { height: 'var(--radix-accordion-content-height)' }, // Animasi untuk menampilkan konten accordion
         },
         'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: 0 },
+          from: { height: 'var(--radix-accordion-content-height)' }, // Animasi untuk menutup accordion (dari tinggi konten)
+          to: { height: 0 }, // Animasi untuk menyembunyikan konten accordion
         },
         marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-100%)' },
+          '0%': { transform: 'translateX(0%)' }, // Animasi marquee gerak horizontal
+          '100%': { transform: 'translateX(-100%)' }, // Menyelesaikan gerakan marquee ke kiri
         },
         'marquee-up': {
-          '0%': { transform: 'translateY(`0%)' },
-          '100%': { transform: 'translateY(-100%)' },
+          '0%': { transform: 'translateY(0%)' }, // Animasi marquee gerak vertikal
+          '100%': { transform: 'translateY(-100%)' }, // Menyelesaikan gerakan marquee ke atas
         },
       },
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-        marquee: 'marquee 25s linear infinite',
-        'marquee-up': 'marquee-up 15s linear infinite',
+        'accordion-down': 'accordion-down 0.2s ease-out', // Durasi dan timing untuk animasi membuka accordion
+        'accordion-up': 'accordion-up 0.2s ease-out', // Durasi dan timing untuk animasi menutup accordion
+        marquee: 'marquee 25s linear infinite', // Durasi untuk animasi marquee horizontal
+        'marquee-up': 'marquee-up 15s linear infinite', // Durasi untuk animasi marquee vertikal
       },
     },
   },
+
+  // Menambahkan plugin untuk animasi dengan Tailwind CSS
   plugins: ['tailwindcss-animate'],
 }
