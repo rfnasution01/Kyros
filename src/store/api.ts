@@ -18,7 +18,7 @@ export type Meta = {
 export type Res<T, M = undefined> = {
   status: boolean // Indicates if the request was successful or not
   message: string // A message related to the request (could be success/error message)
-  data: T // The main data returned from the API
+  result: T // The main data returned from the API
   related: T // Related data returned from the API
   meta: Meta // Pagination metadata
   mapped?: M // An optional mapped field (may contain additional transformed data)
