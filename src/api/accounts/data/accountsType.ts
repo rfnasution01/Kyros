@@ -4,6 +4,7 @@ export type ResAccountBalanceMultipleType = {
 }
 
 export type PayloadAccountBalanceType = {
+  url: string
   module?: string
   action?:
     | 'balance'

@@ -4,6 +4,7 @@ import { configureStore } from '@reduxjs/toolkit'
 // Import the API slice and the stateMode reducer to include in the store
 import { api } from './api'
 import stateMode from './reducer/stateMode.tsx'
+import stateNetwork from './reducer/stateNetwork.tsx'
 
 // Configure the Redux store using 'configureStore' from Redux Toolkit
 // This function sets up the store with reducers, middleware, and other configurations
@@ -13,6 +14,8 @@ export const store = configureStore({
     [api.reducerPath]: api.reducer,
     // Register the stateMode reducer to manage the dark mode state
     stateMode: stateMode,
+    // Register the stateNetwork reducer to manage the dark mode state
+    stateNetwork: stateNetwork,
   },
   // Enable Redux DevTools for debugging the store during development
   devTools: true,

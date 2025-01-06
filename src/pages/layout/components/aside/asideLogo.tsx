@@ -1,36 +1,25 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { Dispatch, SetStateAction } from 'react'
-
-export function AsideLogo({
-  isShow,
-  setIsShow,
-}: {
-  isShow: boolean
-  setIsShow: Dispatch<SetStateAction<boolean>>
-}) {
+export function AsideLogo() {
   return (
-    <div className="flex items-center gap-32">
+    // Main wrapper for the logo section, using flexbox with a gap of 32px between elements
+    <div className="flex items-center gap-32 px-32">
+      {/* Flexible container for the logo image and text, with a gap of 16px between items */}
       <div className="flex flex-1 items-center gap-16">
+        {/* Logo image */}
         <img
-          src="/logo.png"
-          className="h-[6rem] w-[6rem]"
-          alt="Kyros"
-          loading="eager"
+          src="/logo.png" // Path to the logo file
+          className="h-[6rem] w-[6rem]" // Logo dimensions (height and width of 6rem)
+          alt="Kyros" // Alternative text for the logo
+          loading="eager" // Loads the image with high priority
         />
+        {/* Logo text with "Town" styled in a different color */}
         <p
-          className="font-montserrat text-[3.2rem] font-semibold"
-          style={{ letterSpacing: '0.2rem' }}
+          className="font-montserrat text-[3.2rem] font-semibold" // Font style, text size (3.2rem), and bold weight
+          style={{ letterSpacing: '0.2rem' }} // Letter spacing set to 0.2rem
         >
-          Cryp<span className="text-accent">Town</span>
+          Cryp<span className="text-accent">Town</span>{' '}
+          {/* "Town" highlighted with an accent color */}
         </p>
       </div>
-      <span
-        onClick={() => setIsShow(!isShow)} // Toggle the state on click
-        className="bg-accent text-primary z-10 transform cursor-pointer rounded-lg transition-all duration-300"
-      >
-        {/* Conditionally render ChevronLeft or ChevronRight based on isShow */}
-        {isShow ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
-      </span>
     </div>
   )
 }

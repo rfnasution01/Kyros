@@ -18,8 +18,8 @@ export const AccountEndpoints = api.injectEndpoints({
       Res<string>,
       PayloadAccountBalanceType
     >({
-      query: ({ module, action, address, tag, apikey }) => ({
-        url: ``,
+      query: ({ module, action, address, tag, apikey, url }) => ({
+        url: `${url}`,
         method: 'GET',
         params: {
           module: module,
@@ -34,8 +34,8 @@ export const AccountEndpoints = api.injectEndpoints({
       Res<ResAccountBalanceMultipleType[]>,
       PayloadAccountBalanceType
     >({
-      query: ({ module, action, address, tag, apikey }) => ({
-        url: ``,
+      query: ({ module, action, address, tag, apikey, url }) => ({
+        url: `${url}`,
         method: 'GET',
         params: {
           module: module,
@@ -51,6 +51,7 @@ export const AccountEndpoints = api.injectEndpoints({
       PayloadAccountBalanceType
     >({
       query: ({
+        url,
         module,
         action,
         address,
@@ -61,7 +62,7 @@ export const AccountEndpoints = api.injectEndpoints({
         sort,
         apikey,
       }) => ({
-        url: ``,
+        url: `${url}`,
         method: 'GET',
         params: {
           module: module,
@@ -81,6 +82,7 @@ export const AccountEndpoints = api.injectEndpoints({
       PayloadAccountBalanceType
     >({
       query: ({
+        url,
         module,
         action,
         address,
@@ -91,7 +93,7 @@ export const AccountEndpoints = api.injectEndpoints({
         sort,
         apikey,
       }) => ({
-        url: ``,
+        url: `${url}`,
         method: 'GET',
         params: {
           module: module,
@@ -110,8 +112,8 @@ export const AccountEndpoints = api.injectEndpoints({
       Res<ResAccountTransactionInternalByTHashType[]>,
       PayloadAccountBalanceType
     >({
-      query: ({ module, action, txhash, apikey }) => ({
-        url: ``,
+      query: ({ module, url, action, txhash, apikey }) => ({
+        url: `${url}`,
         method: 'GET',
         params: {
           module: module,
@@ -126,6 +128,7 @@ export const AccountEndpoints = api.injectEndpoints({
       PayloadAccountBalanceType
     >({
       query: ({
+        url,
         module,
         action,
         startblock,
@@ -135,7 +138,7 @@ export const AccountEndpoints = api.injectEndpoints({
         sort,
         apikey,
       }) => ({
-        url: ``,
+        url: `${url}`,
         method: 'GET',
         params: {
           module: module,
@@ -154,6 +157,7 @@ export const AccountEndpoints = api.injectEndpoints({
       PayloadAccountBalanceType
     >({
       query: ({
+        url,
         module,
         action,
         contractaddress,
@@ -165,7 +169,7 @@ export const AccountEndpoints = api.injectEndpoints({
         sort,
         apikey,
       }) => ({
-        url: ``,
+        url: `${url}`,
         method: 'GET',
         params: {
           module: module,
@@ -196,8 +200,9 @@ export const AccountEndpoints = api.injectEndpoints({
         endblock,
         sort,
         apikey,
+        url,
       }) => ({
-        url: ``,
+        url: `${url}`,
         method: 'GET',
         params: {
           module: module,
@@ -218,6 +223,7 @@ export const AccountEndpoints = api.injectEndpoints({
       PayloadAccountBalanceType
     >({
       query: ({
+        url,
         module,
         action,
         contractaddress,
@@ -229,7 +235,7 @@ export const AccountEndpoints = api.injectEndpoints({
         sort,
         apikey,
       }) => ({
-        url: ``,
+        url: `${url}`,
         method: 'GET',
         params: {
           module: module,
@@ -250,6 +256,7 @@ export const AccountEndpoints = api.injectEndpoints({
       PayloadAccountBalanceType
     >({
       query: ({
+        url,
         module,
         action,
         contractaddress,
@@ -259,7 +266,7 @@ export const AccountEndpoints = api.injectEndpoints({
         offset,
         apikey,
       }) => ({
-        url: ``,
+        url: `${url}`,
         method: 'GET',
         params: {
           module: module,
@@ -278,6 +285,7 @@ export const AccountEndpoints = api.injectEndpoints({
       PayloadAccountBalanceType
     >({
       query: ({
+        url,
         module,
         action,
         address,
@@ -288,7 +296,7 @@ export const AccountEndpoints = api.injectEndpoints({
         sort,
         apikey,
       }) => ({
-        url: ``,
+        url: `${url}`,
         method: 'GET',
         params: {
           module: module,
@@ -307,8 +315,8 @@ export const AccountEndpoints = api.injectEndpoints({
       Res<string>,
       PayloadAccountBalanceType
     >({
-      query: ({ module, action, address, blockno, apikey }) => ({
-        url: ``,
+      query: ({ module, url, action, address, blockno, apikey }) => ({
+        url: `${url}`,
         method: 'GET',
         params: {
           module: module,

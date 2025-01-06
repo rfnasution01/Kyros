@@ -1,1 +1,2 @@
-export * from './aside/asideLogo'
+export * from './aside'
+export * from './header'

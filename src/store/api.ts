@@ -24,16 +24,12 @@ export type Res<T, M = undefined> = {
   mapped?: M // An optional mapped field (may contain additional transformed data)
 }
 
-// Define the base URL for the API
-// The base URL is fetched from environment variables (VITE_BASE_URL)
-const baseURL = import.meta.env.VITE_BASE_URL
-
 // Create an API slice using 'createApi' from Redux Toolkit
 // This slice will be responsible for making requests and managing API data
 export const api = createApi({
   // Define the base query for API requests, using fetchBaseQuery which makes HTTP requests
   baseQuery: fetchBaseQuery({
-    baseUrl: baseURL, // Use the base URL defined above
+    baseUrl: '', // Use the base URL defined above
   }),
   tagTypes: [], // Tag types for cache management (empty here, but can be used for caching invalidation)
 
